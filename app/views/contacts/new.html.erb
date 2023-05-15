@@ -1,0 +1,28 @@
+<%= form_with(model: @contact, local: true) do |form| %>
+
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2>Contentには1文字以上140文字以内でご記入ください</h2>
+    </div>
+  <% end %>
+
+
+  <div class="contact_name">
+    <%= form.label :name%>
+    <BR>
+    <%= form.text_field :name%>
+  </div>
+  <div class="contact_email">
+    <%= form.label :email%>
+    <BR>
+    <%= form.text_field :email %>
+  </div>
+  <div class="contact_content">
+  <%= form.label :content %>
+  <BR>
+  <%= form.text_field :content%>
+ 
+</div>
+  <%= form.submit %>
+
+<% end %>
